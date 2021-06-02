@@ -1,14 +1,15 @@
 import './styles.css';
 
+function buildAddress(town) {
+  return `https://api.openweathermap.org/data/2.5/weather?q=${town}&appid=f5c2f7ddce129955c85c723e691eab9b`;
+}
+
 async function searchTown(town) {
-  console.log('hey');
   try {
-    let address = 'https://api.openweathermap.org/data/2.5/weather?q=';
-    const apiKey = '&appid=f5c2f7ddce129955c85c723e691eab9b';
-    address += town;
-    address += apiKey;
+    const address = buildAddress(town);
     const response = await fetch(address, { mode: 'cors' });
     const weatherData = await response.json();
+    console.log(weatherData);
     return weatherData;
   } catch (err) {
     console.log(err);
@@ -18,8 +19,9 @@ async function searchTown(town) {
 const newText = document.createElement('p');
 const container = document.querySelector('#content');
 const targetTown = 'Lodz';
-console.log('Hey');
-console.log(searchTown(targetTown));
+const currentWeather = searchTown(targetTown);
+newText.textContent = `Current weather in ${targetTown} is ${currentWeather}`;
+container.append(newText);
 
 /*
  *  - Set up a blank HTML document with the appropriate links to your JavaScript and CSS files.
