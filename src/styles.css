@@ -7,7 +7,6 @@ body {
   align-items: center;
   height: 100vh;
   margin: 0;
-  background-image: url(https://source.unsplash.com/1600x900/?rainy);
 }
 .card {
   background: #262626d0;
@@ -17,9 +16,6 @@ body {
   border-radius: 30px;
   width: 100%;
   max-width: 420px;
-}
-h1.temp {
-  margin: 0;
 }
 .search {
   display: flex;
@@ -50,4 +46,29 @@ input.search-bar {
   border-radius: 20px;
   font-family: inherit;
   width: calc(100% - 80px);
+}
+h1.temp {
+  margin: 0;
+  margin-bottom: 0.2rem;
+}
+.icon-container {
+  display: flex;
+  align-items: center;
+}
+.description {
+  margin-left: 8px;
+  text-transform: capitalize;
+}
+.weather.loading {
+  visibility: hidden;
+  max-height: 20px;
+  position: relative;
+}
+.weather.loading:after {
+  visibility: visible;
+  content: 'Loading...';
+  color: white;
+  position: absolute;
+  top: 0;
+  left: 20px;
 }
