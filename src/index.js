@@ -1,30 +1,38 @@
 import './styles.css';
 
-function buildAddress(town) {
-  return `https://api.openweathermap.org/data/2.5/weather?q=${town}&appid=f5c2f7ddce129955c85c723e691eab9b`;
-}
+const weather = {
+  apiKey: 'f5c2f7ddce129955c85c723e691eab9b',
 
-async function getWeatherDescription(town) {
-  try {
-    const address = buildAddress(town);
-    const response = await fetch(address, { mode: 'cors' });
-    const weatherData = await response.json();
-    const { weather } = weatherData;
-    return weather[0].description;
-  } catch (err) {
-    console.log(err);
-  }
-}
+  buildAddress(town) {
+    return (
+      'https://api.openweathermap.org/data/2.5/weather?q=' +
+      town +
+      '&units=metric&appid=' +
+      this.apiKey
+    );
+  },
 
-// const newText = document.createElement('p');
-// const container = document.querySelector('body');
-// const targetTown = 'Lodz';
-// const weatherPromise = getWeatherDescription(targetTown);
-// weatherPromise.then(
-//   (data) =>
-//     (newText.textContent = `Current weather in ${targetTown} is ${data}.`),
-// );
-// container.append(newText);
+  async getWeather(town) {
+    try {
+      const address = buildAddress(town);
+      const response = await fetch(address, { mode: 'cors' });
+      const weatherData = await response.json();
+      return weatherData;
+    } catch (err) {
+      console.log(err);
+    }
+  },
+
+  async parseWeather(town) {
+    const data = await getWeather(town);
+    const { name } = data;
+    const { icon, description } = data.weather[0];
+    const { temp, humidity } = data.main;
+    const { speed } = data.wind;
+
+    return { name, icon, description, temp, humidity, speed };
+  },
+};
 
 /*
  *  - Set up a blank HTML document with the appropriate links to your JavaScript and CSS files.
