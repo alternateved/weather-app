@@ -2,15 +2,16 @@
 
 Implementation of simple weather application from [The Odin Project](https://www.theodinproject.com/paths/full-stack-javascript/courses/javascript/lessons/weather-app) using **JavaScript**, **HTML** and **CSS**.
 
-**Live preview** of the project is available [here]().
+**Live preview** of the project is available [here](https://alternateved.github.io/weather-app/).
 
-![Demo]()
+![Demo](./dist/assets/peek.gif)
 
 ## **Features**
 
 - you can **check weather** in your hometown
 - application provides information such as **humidity, wind speed, temperature and description**
 - application **fetches icons** from [OpenWeather](https://openweathermap.org/) for different weather situations
+- application **fetches background** from [Unsplash Source](https://source.unsplash.com/) depending on gathered forecast
 
 ### **Side notes**
 
