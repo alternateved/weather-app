@@ -18,7 +18,7 @@ function displayWeather(town) {
     humiNode.textContent = `Humidity: ${object.humidity}%`;
     windNode.textContent = `Wind speed: ${object.speed} km/h`;
     infoNode.classList.remove('loading');
-    pageBody.style.backgroundImage = `url(https://source.unsplash.com/1600x900/?${object.main})`;
+    pageBody.style.backgroundImage = `url(https://source.unsplash.com/1920x1080/?${object.main})`;
   });
 }
 

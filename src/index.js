@@ -11,3 +11,4 @@ searchBar.addEventListener('keyup', (event) => {
 
 document.querySelector('.search-bar').value = 'Tokyo';
 searchWeather();
+document.querySelector('.search-bar').value = '';
