@@ -19,7 +19,7 @@ Implementation of simple weather application from [The Odin Project](https://www
 - learned about async/await in JavaScript
 - learned how to use different APIs (OpenWeather, Unsplash Source)
 
-### **Tools:**
+### **Tools**
 
 - Linux terminal
 - neovim
@@ -28,7 +28,7 @@ Implementation of simple weather application from [The Odin Project](https://www
 - Git and GitHub
 - ESLint + Prettier + Airbnb JavaScript Style Guide
 
-### **Third party code:**
+### **Third party code**
 
 - [OpenWeather](https://openweathermap.org/)
 - [Unsplash Source](https://source.unsplash.com/)
